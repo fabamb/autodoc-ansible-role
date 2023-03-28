@@ -79,7 +79,7 @@ None
 Before using the role, add the following lines to your requirements.yaml and run the command `ansible-galaxy -r requirements.yml {{ meta_info['galaxy_info']['role_name'] }}
 
 ```yaml
-- name: k8s_haproxy_keeepalived
+- name: {{ meta_info['galaxy_info']['role_name'] }}
 {%- if project_url %}
   src: git+{{ clone_url }}
 {%- else %}
