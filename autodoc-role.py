@@ -80,7 +80,7 @@ Before using the role, add the following lines to your requirements.yaml and run
 
 ```yaml
 - name: {{ meta_info['galaxy_info']['role_name'] }}
-{%- if project_url %}
+{%- if clone_url %}
   src: git+{{ clone_url }}
 {%- else %}
   src: git+https://github.com/user/{{ meta_info['galaxy_info']['role_name'] }}.git
@@ -94,19 +94,19 @@ Before using the role, add the following lines to your requirements.yaml and run
 ### 7.1 Example Playbook
 
 ```yaml
-{% if example_content -%}
+{%- if example_content -%}
 {{ example_content }}
-{% else -%}
+{%- else %}
 - hosts: servers
   roles:
     - role: {{ meta_info['galaxy_info']['role_name'] }}
-{% if mandatory_vars | length > 0 -%}
+{%- if mandatory_vars_table | length > 0 %}
       vars:      
-{% for var in mandatory_vars -%}
-        - {{ var }}: <{{ var }}>
-{% endfor %}
-{% endif %}
-{% endif %}
+{%- for var in mandatory_vars_table %}
+        - {{ var["Name"] }}: <{{ var["Name"] }}>
+{%- endfor %}
+{%- endif %}
+{%- endif %}
 ```
 
 ## 8. Known problems and limitations
