@@ -12,15 +12,17 @@ TEMPLATE = """
 
 # {{ meta_info['galaxy_info']['role_name'] }}
 
-- [1. Description](#description)
-- [2. Environments](#environments)
-- [3. Requirements](#requirements)
-- [4. Dependencies](#dependencies)
-- [5. Variables](#variables)
-- [6. Procedure](#procedure)
-- [7. Usage](#usage)
-  - [7.1. Example Playbook](#example-playbook)
-- [8. Known problems and limitations](#known-problems-and-limitations)
+- [1. Description](#1-description)
+- [2. Environments](#2-environments)
+- [3. Requirements](#3-requirements)
+- [4. Dependencies](#4-dependencies)
+- [5. Variables](#5-variables)
+  - [5.1 Mandatory variables](#51-mandatory-variables)
+  - [5.2 Default variables](#52-default-variables)
+- [6. Procedure](#6-procedure)
+- [7. Usage](#7-usage)
+  - [7.1 Example Playbook](#71-example-playbook)
+- [8. Known problems and limitations](#8-known-problems-and-limitations)
 - [9. Author Information](#9-author-information)
 
 ## 1. Description
@@ -76,7 +78,7 @@ None
 
 ## 6. Procedure
 
-Before using the role, add the following lines to your requirements.yaml and run the command `ansible-galaxy -r requirements.yml {{ meta_info['galaxy_info']['role_name'] }}
+Before using the role, add the following lines to your requirements.yaml and run the command `ansible-galaxy -r requirements.yml {{ meta_info['galaxy_info']['role_name'] }}`
 
 ```yaml
 - name: {{ meta_info['galaxy_info']['role_name'] }}
